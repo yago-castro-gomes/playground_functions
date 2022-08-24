@@ -132,9 +132,27 @@ switch(str[i]) {
 
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(array, nome) {
+  let objeto = [];
+ 
+  for(i in array){
+    objeto.push({'tech': array[i], 'name': nome})
+  }
+
+  objeto.sort(function(a, b) {
+    if (a.tech < b.tech){
+      return -1;
+    } else {
+      return true
+    }
+  });
+  if (objeto.length == [0]){
+    return 'Vazio!'
+  }
+  return objeto
 }
+
+
 
 module.exports = {
   calcArea,
