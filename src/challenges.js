@@ -100,18 +100,36 @@ switch(str[i]) {
   case 'o': texto += '4'
   break;
   case 'u': texto += '5' 
-  default: texto = str[i]
+  break;
+  default: texto += str[i]
   break;
 }
 }
   return texto;
 }
 
-console.log(encode('yago castro'))
-
-function decode() {
-  // seu código aqui
+function decode(str) {
+  let texto = '';
+  for (i in str){
+switch(str[i]) {
+  case '1': texto += 'a'
+  break;
+  case '2': texto += 'e'
+  break;
+  case '3': texto += 'i'
+  break;
+  case '4': texto += 'o'
+  break;
+  case '5': texto += 'u' 
+  break;
+  default: texto += str[i]
+  break;
 }
+}
+  return texto;
+}
+
+
 
 // Desafio 10
 function techList() {
