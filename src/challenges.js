@@ -1,6 +1,6 @@
 // Desafio 1
-function compareTrue(a,b) {
-  return a && b
+function compareTrue(a, b) {
+  return a && b;
 }
 
 // Desafio 2
@@ -19,65 +19,71 @@ function splitSentence(str) {
 // Desafio 4
 function concatName(array) {
   let primeiraPalavra = array[0];
-  let ultimaPalavra = array[array.length-1]
-  let retorno = ultimaPalavra + "," + " "+ primeiraPalavra
-  return retorno
+  let ultimaPalavra = array[array.length - 1];
+  let retorno = `${ultimaPalavra}, ${primeiraPalavra}`;
+  return retorno;
 }
 
 // Desafio 5
 function footballPoints(wins, ties) {
- let time = wins*3 + ties*1
+  let time = wins * 3 + ties * 1;
 
- return time
+  return time;
 }
 
 // Desafio 6
 function highestCount(maior) {
-  let contador = 0;
-  let comparador = 0;
+  let contador = maior[0];
   let vezes = 0;
-  
-
+﻿
+  for (i in maior){
+    if (maior[i] > contador) {
+      contador = maior[i]
+    }
+  } 
+  for (i2 in maior) {
+    if (contador == maior[i2]){
+      vezes += 1
+    }
+  }
+    return vezes
 }
-
+﻿
+console.log(highestCount ([-2, -2, -1]))
+﻿
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
   let distancia1 = Math.abs(cat1 - mouse);
   let distancia2 = Math.abs(cat2 - mouse);
 
-  
-  if(distancia1 < distancia2) {
-    return 'cat1'
+  if (distancia1 < distancia2) {
+    return 'cat1';
   }
-  else if(distancia2 < distancia1){
-    return 'cat2'
+  if (distancia2 < distancia1) {
+    return 'cat2';
   }
-  else if(distancia1 == distancia2){
-    return 'os gatos trombam e o rato foge'
+  if (distancia1 === distancia2) {
+    return 'os gatos trombam e o rato foge';
   }
 }
 
 // Desafio 8
 function fizzBuzz(array) {
-  
   let vazio = [];
-  
-  for (let i = 0; i < array.length; i += 1)
-  {
-
-    if (array[i]%3 !== 0 && array[i]%5 !== 0){
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] % 3 !== 0 && array[i] % 5 !== 0) {
       array[i] = 'bug!'
       vazio.push(array[i])
     }
-    else if (array[i]%3 === 0 && array[i]%5 === 0){
+    else if (array[i] % 3 === 0 && array[i] % 5 === 0) {
       array[i] = 'fizzBuzz'
       vazio.push(array[i])
     }
-    else if (array[i]%5 === 0){
+    else if (array[i] % 5 === 0) {
       array[i] = 'buzz'
       vazio.push(array[i])
     }
-    else if (array[i]%3 === 0){
+    else if (array[i] % 3 === 0){
       array[i] = 'fizz'
       vazio.push(array[i])
     }
@@ -129,30 +135,27 @@ switch(str[i]) {
   return texto;
 }
 
-
-
 // Desafio 10
 function techList(array, nome) {
   let objeto = [];
- 
-  for(i in array){
-    objeto.push({'tech': array[i], 'name': nome})
-  }
 
-  objeto.sort(function(a, b) {
-    if (a.tech < b.tech){
+  for (let i in array) {
+    if (i < array) {
+      objeto.push({'tech': array[i], 'name': nome})
+    }}
+
+  objeto.sort(function (a, b) {
+    if (a.tech < b.tech) {
       return -1;
-    } else {
-      return true
     }
+    return true;
   });
-  if (objeto.length == [0]){
-    return 'Vazio!'
+
+  if (objeto.length == [0]) {
+    return 'Vazio!';
   }
-  return objeto
+  return objeto;
 }
-
-
 
 module.exports = {
   calcArea,
