@@ -35,22 +35,20 @@ function footballPoints(wins, ties) {
 function highestCount(maior) {
   let contador = maior[0];
   let vezes = 0;
-﻿
-  for (i in maior){
+
+  for (let i in maior) {
     if (maior[i] > contador) {
-      contador = maior[i]
-    }
-  } 
-  for (i2 in maior) {
-    if (contador == maior[i2]){
-      vezes += 1
+      contador = maior[i];
     }
   }
-    return vezes
+  for (let i2 in maior) {
+    if (contador === maior[i2]) {
+      vezes += 1;
+    }
+  }
+  return vezes;
 }
-﻿
-console.log(highestCount ([-2, -2, -1]))
-﻿
+
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
   let distancia1 = Math.abs(cat1 - mouse);
