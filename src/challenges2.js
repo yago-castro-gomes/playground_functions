@@ -24,23 +24,48 @@ function generatePhoneNumber(array) {
       }
   }
  
-  numero = `(${array[0]}${array[1]}) ${array[2]}${array[3]}${array[4]}${array[5]}${array[6]}-${array[7]}${array[8]}${array[9]}${array[10]}`
-  
+  numero = `(${array[0]}${array[1]}) ${array[2]}${array[3]}${array[4]}${array[5]}${array[6]}-${array[7]}${array[8]}${array[9]}${array[10]}`;
+
   return numero;
 }
 
-console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
-
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {
+  let somaAeB = Math.abs(lineA + lineB);
+  let somaAeC = Math.abs(lineA + lineC);
+  let somaBeC = Math.abs(lineB + lineC);
+
+  if (lineA > somaBeC) {
+    return false;
+  }
+  if (lineB > somaAeC) {
+    return false;
+  }
+  if (lineC > somaAeB) {
+    return false;
+  }
+  return true;
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
-}
+function hydrate(str) {
+ let bebidas = str.match(/[0-9]+/g);
+ let agua = 0;
+
+  for(i in bebidas) {
+   agua += parseInt(bebidas[i])
+  }
+
+  if (agua == 1) {
+    return agua + ' copo de água'
+  }
+
+ return agua + ' copos de água'
+ 
+};
+ 
+
 
 module.exports = {
   generatePhoneNumber,
